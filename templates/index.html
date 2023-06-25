@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style> 
+        .master {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            padding: 2rem;
+        }
+        .play {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 2rem;
+        }
+
+        .new-music {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 4rem;
+        }
+
+        .btn {
+            width: 12rem;
+            height: 3rem;
+            border-radius: 8px;
+            background-color: #523A28;
+            color: white;
+            cursor: pointer;
+            border: 0px;
+        }
+        .btn:hover {
+            background-color: #D0B49F;
+        }
+        .book {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .book-img {
+            height: 64px;
+            width: 64px;
+        }
+    </style>
+</head>
+<body>
+    <div class="master"><img src="https://camo.githubusercontent.com/9f549df9473b6abc13a0a81d0a91ae56a8d85d641ab271c25b21af450d058e44/68747470733a2f2f676574636f6d706f7365722e6f72672f696d672f6c6f676f2d636f6d706f7365722d7472616e73706172656e742e706e67" alt=""></div>
+    <div>
+    <div class="new-music">
+        <a style="text-decoration: none; color: white" href="{{ url_for('music') }}" ><button class="btn" id="generate-button">Gerar nova musica</button></a>
+    </div>
+    <div class="book">
+        <img class="book-img" src="{{ url_for('static', filename='img/gifs-de-livros-2.gif') }}" alt="">
+    </div>
+    </div>
+    <div class="play">
+        <audio controls="controls"><source id="audio-source" src="{{ url_for('static', filename='music/'+ music_name + '.wav') }}" type="audio/x-wav" /></audio>
+    </div>
+</body>
+</html>
